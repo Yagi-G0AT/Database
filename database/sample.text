@@ -1,0 +1,24 @@
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+import firebase from 'firebase'
+
+Vue.config.productionTip = false
+const config = {
+  apikey: 'AIzaSyC7i4-gVorI2lAF78xe-ZZctB-Bz9NCx-Y ',
+  projectId: 'project-id.firebaseapp.com',
+  authDomain: 'authDomain.firebaseapp.com',
+  databaseURL: 'https://databaseURL.firebaseio.com',
+  storageBucket: 'storageBucket.appspot.com',
+}
+
+firebase.initializeApp(config);
+
+export default firebase;
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
+
